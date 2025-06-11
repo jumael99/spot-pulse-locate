@@ -48,7 +48,84 @@ const ParkingMap = () => {
     <div className="relative w-full h-full bg-gradient-to-br from-blue-100 via-white to-green-50">
       {/* Map Container */}
       <div className="absolute inset-0 pt-20">
-        <div className="relative w-full h-full bg-gradient-to-br from-blue-200/30 to-green-200/30 rounded-t-3xl overflow-hidden">
+        <div className="relative w-full h-full bg-gray-100 rounded-t-3xl overflow-hidden">
+          {/* Map Background with Roads and Landmarks */}
+          <div className="absolute inset-0 bg-gray-100">
+            {/* Major Roads */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              {/* Horizontal Streets */}
+              <div className="absolute top-1/4 left-0 w-full h-1 bg-gray-300 shadow-sm"></div>
+              <div className="absolute top-2/4 left-0 w-full h-2 bg-gray-400 shadow-md"></div>
+              <div className="absolute top-3/4 left-0 w-full h-1 bg-gray-300 shadow-sm"></div>
+              
+              {/* Vertical Streets */}
+              <div className="absolute top-0 left-1/4 w-1 h-full bg-gray-300 shadow-sm"></div>
+              <div className="absolute top-0 left-2/4 w-2 h-full bg-gray-400 shadow-md"></div>
+              <div className="absolute top-0 left-3/4 w-1 h-full bg-gray-300 shadow-sm"></div>
+              
+              {/* Highway/Main Road */}
+              <div className="absolute top-0 left-0 w-full h-full">
+                <div className="absolute top-1/2 left-0 w-full h-3 bg-yellow-400 opacity-80 transform -rotate-12 shadow-lg"></div>
+                <div className="absolute top-1/2 left-0 w-full h-1 bg-yellow-200 transform -rotate-12"></div>
+              </div>
+            </div>
+            
+            {/* City Blocks */}
+            <div className="absolute inset-0">
+              {/* Building Blocks */}
+              <div className="absolute top-10 left-10 w-20 h-16 bg-gray-200 rounded shadow-sm border border-gray-300"></div>
+              <div className="absolute top-10 right-20 w-24 h-20 bg-gray-200 rounded shadow-sm border border-gray-300"></div>
+              <div className="absolute bottom-20 left-20 w-18 h-14 bg-gray-200 rounded shadow-sm border border-gray-300"></div>
+              <div className="absolute bottom-16 right-16 w-22 h-18 bg-gray-200 rounded shadow-sm border border-gray-300"></div>
+              
+              {/* Parks/Green Spaces */}
+              <div className="absolute top-32 left-1/3 w-16 h-16 bg-green-200 rounded-lg shadow-sm border border-green-300 opacity-70">
+                <div className="absolute inset-2 bg-green-300 rounded opacity-50"></div>
+              </div>
+              <div className="absolute bottom-32 right-1/3 w-20 h-12 bg-green-200 rounded-lg shadow-sm border border-green-300 opacity-70">
+                <div className="absolute inset-2 bg-green-300 rounded opacity-50"></div>
+              </div>
+              
+              {/* Water Body */}
+              <div className="absolute top-1/4 right-10 w-24 h-32 bg-blue-200 rounded-2xl shadow-sm border border-blue-300 opacity-60">
+                <div className="absolute inset-2 bg-blue-300 rounded-xl opacity-50"></div>
+              </div>
+              
+              {/* Commercial Areas */}
+              <div className="absolute bottom-1/4 left-1/4 w-32 h-24 bg-orange-100 rounded shadow-sm border border-orange-200 opacity-70">
+                <div className="absolute inset-4 grid grid-cols-3 gap-1">
+                  <div className="bg-orange-200 rounded-sm"></div>
+                  <div className="bg-orange-200 rounded-sm"></div>
+                  <div className="bg-orange-200 rounded-sm"></div>
+                  <div className="bg-orange-200 rounded-sm"></div>
+                  <div className="bg-orange-200 rounded-sm"></div>
+                  <div className="bg-orange-200 rounded-sm"></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Street Names */}
+            <div className="absolute inset-0 text-xs text-gray-600 font-medium">
+              <div className="absolute top-1/4 left-4 transform -rotate-90 bg-white px-1 rounded shadow-sm">Main St</div>
+              <div className="absolute top-1/2 left-4 transform -rotate-90 bg-white px-1 rounded shadow-sm">Oak Ave</div>
+              <div className="absolute top-3/4 left-4 transform -rotate-90 bg-white px-1 rounded shadow-sm">Pine St</div>
+              <div className="absolute top-2 left-1/4 bg-white px-1 rounded shadow-sm">1st Ave</div>
+              <div className="absolute top-2 left-2/4 bg-white px-1 rounded shadow-sm">Broadway</div>
+              <div className="absolute top-2 left-3/4 bg-white px-1 rounded shadow-sm">3rd Ave</div>
+            </div>
+            
+            {/* Subtle Grid Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="w-full h-full" style={{
+                backgroundImage: `
+                  linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: '20px 20px'
+              }}></div>
+            </div>
+          </div>
+
           {/* User Location Indicator */}
           <div 
             className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2"
